@@ -1,0 +1,70 @@
+name: EasyMeshVR Frontend CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    # Node versions to run the action on
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Setup node version and cache npm dependencies
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build app
+        run: npm run build --if-present
+        
+      - name: Run tests
+        run: npm test
+      
+      - name: Install express server dependencies
+        run: cd ./server && npm install && cd ..
+        
+      - name: Generate deployment package
+        run: zip -r deploy.zip * -x '*.git*'
+
+      - name: Get current timestamp
+        id: time
+        uses: nanzm/get-time-action@v1.1
+        with:
+          timeZone: 8
+          format: 'YYYY-MM-DD-HH-mm-ss'
+        
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v18
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: EasyMeshVR-Frontend
+          environment_name: Easymeshvrfrontend-env
+          version_label: "easymeshvr-${{ steps.time.outputs.time }}"
+          region: us-east-2
+          deployment_package: deploy.zip
+      
+    
