@@ -1,0 +1,32 @@
+.NavLink {
+	text-decoration: none;
+	color: #000000;
+	margin-left: 25px;
+	margin-right: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 100%;
+}
+
+.NavLinkBold {
+	font-weight: bold;
+}
+
+.NavLinkLarge {
+	font-size: 24px;
+}
+
+.NavLinkRegular {
+	font-weight: normal;
+	font-style: normal;
+}
+
+.NavLinkRegular:hover {
+	color: tomato;
+}
+
+img {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+}
