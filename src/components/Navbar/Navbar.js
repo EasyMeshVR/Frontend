@@ -32,15 +32,14 @@ const Navbar = () => {
 				{renderNavLinks()}
 			</div>
 			<div className="HamburgerMenuDiv">
-	            <a 
-					href="#" 
+	            <button 
 					onClick={() => setMenuToggled(!menuToggled)} 
 					className="MenuToggleButton"
 				>
 	                <span className="MenuBar"></span>
 	                <span className="MenuBar"></span>
 	                <span className="MenuBar"></span>
-	            </a>
+	            </button>
 				{renderHamburgerMenuLinks()}
 			</div>
 		</nav>
