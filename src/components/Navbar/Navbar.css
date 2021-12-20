@@ -8,8 +8,67 @@
 	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
+.BrandNameDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .NavLinkDiv {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.HamburgerMenuDiv {
+	display: none;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.HamburgerMenuLinksDiv {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.MenuToggleButton {
+	all: unset;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.MenuToggleButton:hover {
+	cursor: pointer;
+}
+ 
+.MenuToggleButton .MenuBar {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+@media (max-width: 650px) {
+    .Navbar .HamburgerMenuDiv {
+        display: flex;
+    }
+
+	.Navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.Navbar .NavLinkDiv {
+		width: 100%;
+		flex-direction: column;
+		display: none;
+	}
 }
