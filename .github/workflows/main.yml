@@ -62,6 +62,7 @@ jobs:
           application_name: EasyMeshVR-Frontend
           environment_name: Easymeshvrfrontend-env
           version_label: "easymeshvr-${{ steps.time.outputs.time }}"
+          wait_for_environment_recovery: 120
           region: ${{ secrets.AWS_REGION }}
           deployment_package: deploy.zip
       
