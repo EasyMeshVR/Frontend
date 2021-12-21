@@ -116,9 +116,7 @@ const UploadPage = () => {
 					<ProgressBar 
 						progress={progress}
 						bgcolor="orange"
-					/>
-					:
-					<></>
+					/> : <></>
 				}
 				{errorMessage !== "" ?
 					<span className="DropZoneText ErrorMessageText">{errorMessage}</span>
@@ -130,8 +128,8 @@ const UploadPage = () => {
 							Finished uploading {file.name}, your model code is:
 						</p>
 						<p className="DropZoneText BoldOrangeText">{modelCode}</p>
-					</div>
-				: <></>}
+					</div> : <></>
+				}
 			</div>	
 		</div>
 	)
