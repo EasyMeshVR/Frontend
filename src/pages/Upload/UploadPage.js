@@ -112,10 +112,14 @@ const UploadPage = () => {
 					onChange={onChangeChosenFile}
 					accept={acceptedFileType}
 				/>
-				<ProgressBar 
-					progress={progress}
-					bgcolor="orange"
-				/>
+				{isUploading ?
+					<ProgressBar 
+						progress={progress}
+						bgcolor="orange"
+					/>
+					:
+					<></>
+				}
 				{errorMessage !== "" ?
 					<span className="DropZoneText ErrorMessageText">{errorMessage}</span>
 					: <></>

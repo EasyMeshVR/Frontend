@@ -40,6 +40,7 @@
 .ErrorMessageText {
     color: red;
     font-weight: bold;
+    padding-top: 50px;
 }
 
 .ChooseFileInput {
