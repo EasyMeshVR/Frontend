@@ -14,11 +14,34 @@
     justify-content: center;
     align-items: center;
     width: 75%;
-    height: 350px;
+    min-height: 450px;
     border: 3px dashed white;
     padding: 50px 100px;
 }
 
 .DropZoneText {
-    font-size: 100%;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.FileNameText {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.BoldOrangeText {
+    color: orange;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.ChooseFileInput {
+    display: none;
+}
+
+.ChooseFileDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
