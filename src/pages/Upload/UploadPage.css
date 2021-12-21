@@ -37,6 +37,11 @@
     font-weight: bold;
 }
 
+.ErrorMessageText {
+    color: red;
+    font-weight: bold;
+}
+
 .ChooseFileInput {
     display: none;
 }

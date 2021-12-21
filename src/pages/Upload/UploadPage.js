@@ -10,6 +10,7 @@ const UploadPage = () => {
 	const [file, setFile] = useState(null);
 	const [progress, setProgress] = useState(0);
 	const [modelCode, setModelCode] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
 	const [isUploading, setIsUploading] = useState(false);
 
 	const overrideEventDefaults = (event) => {
@@ -26,17 +27,22 @@ const UploadPage = () => {
 
 	const handleFiles = (fileList) => {
 		if (!fileList) return;
+
+		setErrorMessage("");
+		setModelCode("");
+		setProgress(0);
+
 		if (fileList.length !== 1) {
-			console.log("Can only upload one file at a time.");
+			setFile(null);
+			setErrorMessage("You can only upload one file at a time.");
 			return;
 		}
 		if (fileList[0].type !== acceptedFileType) {
-			console.log("Can only upload model/stl files");
+			setFile(null);
+			setErrorMessage("You can only upload stl files.");
 			return;
 		}
 
-		setModelCode("");
-		setProgress(0);
 		setFile(fileList[0]);
 	};
 
@@ -56,7 +62,12 @@ const UploadPage = () => {
 		if (file === null) return;
 
 		setIsUploading(true);
-		const code = await FileService.uploadFile(file, setProgress);
+		let code = "";
+		try {
+			code = await FileService.uploadFile(file, setProgress);
+		} catch (error) {
+			setErrorMessage("Network error encountered while uploading file.");
+		}
 		setIsUploading(false);
 		setModelCode(code);
 	};
@@ -105,9 +116,15 @@ const UploadPage = () => {
 					progress={progress}
 					bgcolor="orange"
 				/>
+				{errorMessage !== "" ?
+					<span className="DropZoneText ErrorMessageText">{errorMessage}</span>
+					: <></>
+				}
 				{(file !== null && modelCode !== "") ? 
 					<div>
-						<p className="DropZoneText">Finished uploading {file.name}, your model code is:</p>
+						<p className="DropZoneText">
+							Finished uploading {file.name}, your model code is:
+						</p>
 						<p className="DropZoneText BoldOrangeText">{modelCode}</p>
 					</div>
 				: <></>}
