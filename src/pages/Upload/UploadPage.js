@@ -19,12 +19,12 @@ const UploadPage = () => {
 
 	const handleFileDrop = async (event) => {
 		overrideEventDefaults(event);
-		if (!event.dataTransfer) return;
+		if (isUploading || !event.dataTransfer) return;
 
-		await handleFiles(event.dataTransfer.files);
+		handleFiles(event.dataTransfer.files);
 	};
 
-	const handleFiles = async (fileList) => {
+	const handleFiles = (fileList) => {
 		if (!fileList) return;
 		if (fileList.length !== 1) {
 			console.log("Can only upload one file at a time.");
@@ -35,6 +35,8 @@ const UploadPage = () => {
 			return;
 		}
 
+		setModelCode("");
+		setProgress(0);
 		setFile(fileList[0]);
 	};
 
@@ -47,7 +49,7 @@ const UploadPage = () => {
 		overrideEventDefaults(event);
 		if (!event.target || !event.target.files) return;
 
-		await handleFiles(event.target.files);
+		handleFiles(event.target.files);
 	};
 
 	const uploadFile = async (event) => {
@@ -103,12 +105,12 @@ const UploadPage = () => {
 					progress={progress}
 					bgcolor="orange"
 				/>
-					{(file !== null && modelCode !== "") ? 
-						<div>
-							<p className="DropZoneText">Finished uploading {file.name}, your model code is:</p>
-							<p className="DropZoneText BoldOrangeText">{modelCode}</p>
-						</div>
-					: <></>}
+				{(file !== null && modelCode !== "") ? 
+					<div>
+						<p className="DropZoneText">Finished uploading {file.name}, your model code is:</p>
+						<p className="DropZoneText BoldOrangeText">{modelCode}</p>
+					</div>
+				: <></>}
 			</div>	
 		</div>
 	)
