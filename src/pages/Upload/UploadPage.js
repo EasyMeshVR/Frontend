@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import FileService from '../../services/FileService';
+import Button from '../../components/Button/Button';
 import './UploadPage.css';
 
 const UploadPage = () => {
@@ -76,11 +77,19 @@ const UploadPage = () => {
 			>
 				<p className="DropZoneText">Drag an STL model file to drop zone or browse.</p>
 				<div className="ChooseFileDiv">
-					<button disabled={isUploading} onClick={handleChooseFileButton}>Choose File</button>
+					<Button 
+						disabled={isUploading}
+						onClick={handleChooseFileButton}
+						text="Choose File"
+					/>
 					<span className="DropZoneText FileNameText">
 						{(file !== null) ? file.name : "No file selected"}
 					</span>
-					<button disabled={isUploading} onClick={uploadFile}>Upload</button>
+					<Button 
+						disabled={isUploading || file === null}
+						onClick={uploadFile}
+						text="Upload"
+					/>
 				</div>
 				<input 
 					className="DropZoneText ChooseFileInput" 
