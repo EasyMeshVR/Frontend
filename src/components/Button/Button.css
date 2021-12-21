@@ -1,0 +1,22 @@
+.Button {
+   background-color: white; 
+   border-radius: 3px;
+   border: none;
+   width: 200px;
+   height: 45px;
+   text-align: center;
+}
+
+.DisabledButton {
+   background-color: lightgray; 
+   border-radius: 3px;
+   border: none;
+   width: 200px;
+   height: 45px;
+   text-align: center;   
+}
+
+.Button:hover {
+    cursor: pointer;
+    background-color: orange;
+}

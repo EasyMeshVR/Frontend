@@ -1,0 +1,21 @@
+.ParentDiv {
+    height: 30px;
+    width: 50%;
+    background-color: whitesmoke;
+    border-radius: 40px;
+    margin: 50px;
+}
+
+.ChildDiv {
+    height: 100%;
+    width: 0%;
+    background-color: orange;
+    border-radius: 40px;
+    text-align: right;
+}
+
+.ProgressText {
+    padding: 10px;
+    color: black;
+    font-weight: 900;
+}
