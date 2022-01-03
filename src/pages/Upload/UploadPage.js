@@ -5,7 +5,7 @@ import Button from '../../components/Button/Button';
 import './UploadPage.css';
 
 const UploadPage = () => {
-	const acceptedFileType = "model/stl";
+	const acceptedFileType = ".stl";
 	const chooseFileRef = useRef(null);
 	const [file, setFile] = useState(null);
 	const [progress, setProgress] = useState(0);
@@ -26,7 +26,7 @@ const UploadPage = () => {
 	};
 
 	const handleFiles = (fileList) => {
-		if (!fileList) return;
+		if (fileList === undefined) return;
 
 		setErrorMessage("");
 		setModelCode("");
@@ -35,11 +35,6 @@ const UploadPage = () => {
 		if (fileList.length !== 1) {
 			setFile(null);
 			setErrorMessage("You can only upload one file at a time.");
-			return;
-		}
-		if (fileList[0].type !== acceptedFileType) {
-			setFile(null);
-			setErrorMessage("You can only upload stl files.");
 			return;
 		}
 
