@@ -12,6 +12,7 @@ const UploadPage = () => {
 	const [modelCode, setModelCode] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 	const [isUploading, setIsUploading] = useState(false);
+	const [codeType, setCodeType] = useState("word");
 
 	const overrideEventDefaults = (event) => {
 		event.preventDefault();
@@ -53,13 +54,18 @@ const UploadPage = () => {
 		handleFiles(event.target.files);
 	};
 
+	const onChangeCodeType = (event) => {
+		if (!event.target || !event.target.value) return;
+		setCodeType(event.target.value);
+	};
+
 	const uploadFile = async (event) => {
 		if (file === null) return;
 
 		setIsUploading(true);
 		let code = "";
 		try {
-			code = await FileService.uploadFile(file, setProgress);
+			code = await FileService.uploadFile(file, codeType, setProgress);
 		} catch (error) {
 			setErrorMessage("Network error encountered while uploading file.");
 		}
@@ -98,6 +104,15 @@ const UploadPage = () => {
 						onClick={uploadFile}
 						text="Upload"
 					/>
+				</div>
+				<div className="ModelCodeSelectDiv">
+					<label for="codeType" className="ModelCodeSelectLabel">
+						Choose a model code type to generate:
+					</label>
+					<select disabled={isUploading} name="codeType" id="codeType" onChange={onChangeCodeType}>
+						<option value="word">Word Code</option>
+						<option value="digit">Digit Code</option>
+					</select>
 				</div>
 				<input 
 					className="DropZoneText ChooseFileInput" 

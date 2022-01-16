@@ -3,11 +3,12 @@ import axios from 'axios';
 class FileService {
     static #FILE_SERVICE_ENDPOINT = "https://fzq7qh0yub.execute-api.us-east-2.amazonaws.com/file";
 
-    static async requestPresignedUrl(method, params) {
+    static async requestPresignedUrl(method, params, data) {
         return await axios({ 
             method: method,
             url: this.#FILE_SERVICE_ENDPOINT,
-            params: params 
+            params: params,
+            data: data
         });
     };
 
@@ -16,8 +17,8 @@ class FileService {
         return Math.round(progressEvent.loaded * 100 / progressEvent.total);
     }
 
-    static async uploadFile(file, setProgress) {
-        const requestPresignedPostRes = await this.requestPresignedUrl("post");
+    static async uploadFile(file, codeType, setProgress) {
+        const requestPresignedPostRes = await this.requestPresignedUrl("post", undefined, { codeType: codeType });
         const presignedPostData = requestPresignedPostRes.data;
 
         const data = new FormData();
@@ -33,11 +34,11 @@ class FileService {
         };
 
         await axios.post(presignedPostData.data.url, data, config);
-        return presignedPostData.nameCode;
+        return presignedPostData.code;
     };
 
     static async downloadFile(fileCode, setProgress) {
-        const requestPresignedGetRes = await this.requestPresignedUrl("get", { nameCode: fileCode });
+        const requestPresignedGetRes = await this.requestPresignedUrl("get", { code: fileCode });
         const presignedGetData = requestPresignedGetRes.data;
 
         const getUrl = presignedGetData.url;

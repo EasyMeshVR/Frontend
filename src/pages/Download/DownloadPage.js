@@ -33,11 +33,14 @@ const Download = () => {
 		} catch (error) {
 			if (error.response && error.response.status) {
 				switch (error.response.status) {
+					case 400:
+						setErrorMessage("The model code is either a 6-digit or a three-word code separated by hyphens.");
+						break;
 					case 404:
 						setErrorMessage("File not found.")
 						break;
 					default:
-						setErrorMessage("Encountered a network error while downloading file.");
+						setErrorMessage("Network error encountered while downloading file.");
 						break;
 				}
 			}

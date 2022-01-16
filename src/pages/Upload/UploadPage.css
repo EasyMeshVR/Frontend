@@ -54,3 +54,17 @@
     align-items: center;
     width: 100%;
 }
+
+.ModelCodeSelectDiv {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 3%;
+    justify-content: center;
+    align-items: center;
+}
+
+.ModelCodeSelectLabel {
+    padding-right: 1%;
+    text-align: center;
+}
