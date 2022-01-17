@@ -1,9 +1,10 @@
 import React from 'react';
+import homepageStyles from './HomePage.module.css';
 
 const Home = () => {
 	return (
 		<div>
-			Home
+			{/* <button className={homepageStyles.Button}>Download App</button>	 */}
 		</div>
 	)
 };

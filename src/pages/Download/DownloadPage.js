@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Button from '../../components/Button/Button';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import FileService from '../../services/FileService';
-import './DownloadPage.css';
+import downloadPageStyles from './DownloadPage.module.css';
 
 const Download = () => {
 	const [isDownloading, setIsDownloading] = useState(false);
@@ -61,14 +61,14 @@ const Download = () => {
 	};
 
 	return (
-		<div className="DownloadPage">
-			<h1 className="BoldOrangeText">Download STL model file</h1>
-			<div className="DownloadDiv">
-				<p className="DownloadPageText">Enter your model code to download.</p>
-				<div className="InputDiv">
+		<div className={downloadPageStyles.DownloadPage}>
+			<h1 className={downloadPageStyles.BoldOrangeText}>Download STL model file</h1>
+			<div className={downloadPageStyles.DownloadDiv}>
+				<p className={downloadPageStyles.DownloadPageText}>Enter your model code to download.</p>
+				<div className={downloadPageStyles.InputDiv}>
 					<input 
 						type="text"
-						className="ModelCodeInput"
+						className={downloadPageStyles.ModelCodeInput}
 						onChange={onChangeModelCode}
 						placeholder="Enter model code"
 					/>
@@ -86,13 +86,15 @@ const Download = () => {
 					: <></>
 				}
 				{errorMessage !== "" ?
-					<span className="DownloadPageText ErrorMessageText">{errorMessage}</span>
+					<span className={`${downloadPageStyles.DownloadPageText} ${downloadPageStyles.ErrorMessageText}`}>
+						{errorMessage}
+					</span>
 					: <></>
 				}
 				{(downloadUrl !== null && fileName !== "") ? 
 					<a 
 						ref={downloadLinkRef} 
-						className="DownloadRefLink" 
+						className={downloadPageStyles.DownloadRefLink} 
 						download={fileName} 
 						href={downloadUrl}
 					> 

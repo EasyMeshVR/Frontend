@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import FileService from '../../services/FileService';
 import Button from '../../components/Button/Button';
-import './UploadPage.css';
+import uploadPageStyles from './UploadPage.module.css';
 
 const UploadPage = () => {
 	const acceptedFileType = ".stl";
@@ -75,28 +75,30 @@ const UploadPage = () => {
 
 	return (
 		<div 
-			className="UploadPage"
+			className={uploadPageStyles.UploadPage}
 			onDrop={overrideEventDefaults}
 			onDragEnter={overrideEventDefaults}
 			onDragLeave={overrideEventDefaults}
 			onDragOver={overrideEventDefaults}
 		>
-			<h1 className="BoldOrangeText">Upload STL model file</h1>
+			<h1 className={uploadPageStyles.BoldOrangeText}>Upload STL model file</h1>
 			<div 
-				className="UploadDropZone" 
+				className={uploadPageStyles.UploadDropZone}
 				onDrop={handleFileDrop} 
 				onDragEnter={overrideEventDefaults}
 				onDragLeave={overrideEventDefaults}
 				onDragOver={overrideEventDefaults}
 			>
-				<p className="DropZoneText">Drag an STL model file to drop zone or browse.</p>
-				<div className="ChooseFileDiv">
+				<p className={uploadPageStyles.DropZoneText}>
+					Drag an STL model file to drop zone or browse.
+				</p>
+				<div className={uploadPageStyles.ChooseFileDiv}>
 					<Button 
 						disabled={isUploading}
 						onClick={handleChooseFileButton}
 						text="Choose File"
 					/>
-					<span className="DropZoneText FileNameText">
+					<span className={`${uploadPageStyles.DropZoneText} ${uploadPageStyles.FileNameText}`}>
 						{(file !== null) ? file.name : "No file selected"}
 					</span>
 					<Button 
@@ -105,8 +107,8 @@ const UploadPage = () => {
 						text="Upload"
 					/>
 				</div>
-				<div className="ModelCodeSelectDiv">
-					<label for="codeType" className="ModelCodeSelectLabel">
+				<div className={uploadPageStyles.ModelCodeSelectDiv}>
+					<label for="codeType" className={uploadPageStyles.ModelCodeSelectLabel}>
 						Choose a model code type to generate:
 					</label>
 					<select disabled={isUploading} name="codeType" id="codeType" onChange={onChangeCodeType}>
@@ -115,7 +117,7 @@ const UploadPage = () => {
 					</select>
 				</div>
 				<input 
-					className="DropZoneText ChooseFileInput" 
+					className={`${uploadPageStyles.DropZoneText} ${uploadPageStyles.ChooseFileInput}`} 
 					type="file"
 					disabled={isUploading}
 					ref={chooseFileRef}
@@ -129,15 +131,19 @@ const UploadPage = () => {
 					/> : <></>
 				}
 				{errorMessage !== "" ?
-					<span className="DropZoneText ErrorMessageText">{errorMessage}</span>
+					<span className={`${uploadPageStyles.DropZoneText} ${uploadPageStyles.ErrorMessageText}`}>
+						{errorMessage}
+					</span>
 					: <></>
 				}
 				{(file !== null && modelCode !== "") ? 
 					<div>
-						<p className="DropZoneText">
+						<p className={uploadPageStyles.DropZoneText}>
 							Finished uploading {file.name}, your model code is:
 						</p>
-						<p className="DropZoneText BoldOrangeText">{modelCode}</p>
+						<p className={`${uploadPageStyles.DropZoneText} ${uploadPageStyles.BoldOrangeText}`}>
+							{modelCode}
+						</p>
 					</div> : <></>
 				}
 			</div>	

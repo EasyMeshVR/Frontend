@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Button.css";
+import buttonStyles from "./Button.module.css";
 
 const Button = ({
     text,
@@ -8,7 +8,7 @@ const Button = ({
 }) => {
     return (
         <button
-            className={(disabled) ? "DisabledButton" : "Button"}
+            className={(disabled) ? buttonStyles.DisabledButton : buttonStyles.Button}
             disabled={disabled}
             onClick={onClick}
         >
