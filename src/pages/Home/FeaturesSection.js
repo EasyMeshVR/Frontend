@@ -4,7 +4,6 @@ import cubeImage from '../../resources/images/cube.png';
 import multiplayerImage from '../../resources/images/multiplayer.png';
 import cloudImage from '../../resources/images/cloud.png';
 
-// TODO: responsive mobile layout for the feature icons
 const FeaturesSection = () => {
 	return (
 		<section className={featuresSectionStyles.Features}>
@@ -14,7 +13,7 @@ const FeaturesSection = () => {
 						EasyMeshVR Features
 					</h2>
 					<div className={featuresSectionStyles.FeaturesWrap}>
-						<div className={`${featuresSectionStyles.Feature} ${featuresSectionStyles.IsRevealing}`}>
+						<div className={featuresSectionStyles.Feature}>
 							<div className={featuresSectionStyles.FeatureInner}>
 								<div className={featuresSectionStyles.FeatureIconDiv}>
 									<img className={featuresSectionStyles.FeatureIconImg} src={cubeImage} alt="A cube" />
@@ -27,7 +26,7 @@ const FeaturesSection = () => {
 								</p>
 							</div>
 						</div>
-						<div className={`${featuresSectionStyles.Feature} ${featuresSectionStyles.IsRevealing}`}>
+						<div className={featuresSectionStyles.Feature}>
 							<div className={featuresSectionStyles.FeatureInner}>
 								<div className={featuresSectionStyles.FeatureIconDiv}>
 									<img className={featuresSectionStyles.FeatureIconImg} src={multiplayerImage} alt="Multiplayer" />
@@ -40,7 +39,7 @@ const FeaturesSection = () => {
 								</p>
 							</div>
 						</div>
-						<div className={`${featuresSectionStyles.Feature} ${featuresSectionStyles.IsRevealing}`}>
+						<div className={featuresSectionStyles.Feature}>
 							<div className={featuresSectionStyles.FeatureInner}>
 								<div className={featuresSectionStyles.FeatureIconDiv}>
 									<img className={featuresSectionStyles.FeatureIconImg} src={cloudImage} alt="A cloud with an upload arrow" />
