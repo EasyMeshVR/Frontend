@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProgressBar.css';
+import progressBarStyles from './ProgressBar.module.css';
 
 const ProgressBar = ({
     bgcolor,
@@ -7,15 +7,15 @@ const ProgressBar = ({
     height
 }) => {
     return (
-        <div className="ParentDiv">
+        <div className={progressBarStyles.ParentDiv}>
            <div 
-            className="ChildDiv"
+            className={progressBarStyles.ChildDiv}
             style={{
                 "width": `${progress}%`,
                 "backgroundColor": bgcolor
             }}
            >
-               <span className="ProgressText">
+               <span className={progressBarStyles.ProgressText}>
                    {progress}%
                </span>
            </div> 

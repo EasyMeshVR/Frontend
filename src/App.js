@@ -4,6 +4,7 @@ import DownloadPage from './pages/Download/DownloadPage';
 import UploadPage from './pages/Upload/UploadPage';
 import AboutPage from './pages/About/AboutPage';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
           <Route path="/upload" element={<UploadPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
+
+        <Footer />
       </div>
     </BrowserRouter>
   );

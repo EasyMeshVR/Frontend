@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavLink from './NavLink/NavLink';
 import logoImg from '../../resources/images/logo.svg';
-import './Navbar.css';
+import navbarStyles from './Navbar.module.css';
 
 const Navbar = () => {
 	const [menuToggled, setMenuToggled] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
 
 	const renderHamburgerMenuLinks = () => (
 		(menuToggled ? 
-			<div className="HamburgerMenuLinksDiv">
+			<div className={navbarStyles.HamburgerMenuLinksDiv}>
 				{renderNavLinks()}
 			</div> :
 			<></>
@@ -24,21 +24,21 @@ const Navbar = () => {
 	);
 
 	return (
-		<nav className="Navbar">
-			<div className="BrandNameDiv">
+		<nav className={navbarStyles.Navbar}>
+			<div className={navbarStyles.BrandNameDiv}>
 			    <NavLink to="/" classes='NavLinkLarge NavLinkBold' imgSrc={logoImg} text="EasyMeshVR" />
 			</div>
-			<div className="NavLinkDiv">
+			<div className={navbarStyles.NavLinkDiv}>
 				{renderNavLinks()}
 			</div>
-			<div className="HamburgerMenuDiv">
+			<div className={navbarStyles.HamburgerMenuDiv}>
 	            <button 
 					onClick={() => setMenuToggled(!menuToggled)} 
-					className="MenuToggleButton"
+					className={navbarStyles.MenuToggleButton}
 				>
-	                <span className="MenuBar"></span>
-	                <span className="MenuBar"></span>
-	                <span className="MenuBar"></span>
+	                <span className={navbarStyles.MenuBar}></span>
+	                <span className={navbarStyles.MenuBar}></span>
+	                <span className={navbarStyles.MenuBar}></span>
 	            </button>
 				{renderHamburgerMenuLinks()}
 			</div>
