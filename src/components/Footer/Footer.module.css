@@ -1,0 +1,150 @@
+.SiteFooter {
+    position:relative;
+    font-size:14px;
+    line-height:20px;
+    letter-spacing:0px;
+    color:#556B8B;
+	background-color: #273c5a;
+}
+
+.SiteFooter::before {
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:calc(50% - 180px);
+    width:297px;
+    height:175px;
+    background-repeat:no-repeat;
+}
+
+.SiteFooter a {
+    color: white;
+    text-decoration:none
+}
+
+.SiteFooter a:hover, .SiteFooter a:active {
+    text-decoration:underline
+}
+
+.SiteFooterInner {
+    position:relative;
+    display:flex;
+    flex-wrap:wrap;
+    padding-top:28px;
+    padding-bottom:28px;
+}
+
+.FooterBrand, .FooterLinks, .FooterSocialLinks, .FooterCopyright {
+    flex:none;
+    width:100%;
+    display:inline-flex;
+    justify-content:center;
+    align-items: center;
+	color: white;
+}
+
+.FooterBrand, .FooterLinks, .FooterSocialLinks {
+    margin-bottom:24px;
+}
+
+.FooterBrand {
+    margin-bottom: 0;
+    flex: 50% 1;
+}
+
+.FooterLinks li+li, .FooterSocialLinks li+li {
+    margin-left:16px
+}
+
+.FooterLinks {
+	color: white;
+}
+
+.Container, .ContainerSM {
+    width:100%;
+    margin:0 auto;
+    padding-left:16px;
+    padding-right:16px
+}
+
+.Container {
+    max-width:1128px
+}
+
+.ContainerSM {
+    max-width:848px
+}
+
+.Container .ContainerSM {
+    max-width:800px;
+    padding-left:0;
+    padding-right:0
+}
+
+.HasTopDivider {
+    position:relative
+}
+
+.HasTopDivider::before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    display:block;
+    height:1px;
+    background:#273C5A;
+    background:linear-gradient(to right, rgba(39,60,90,0.1) 0, rgba(39,60,90,0.6) 50%, rgba(39,60,90,0.1) 100%)
+}
+
+.ListReset {
+    list-style:none;
+    padding:0;
+}
+
+.Logo {
+    position:relative;
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+}
+
+@media (min-width: 641px) {
+    .SiteFooter {
+        margin-top:20px
+    }
+
+    .SiteFooterInner {
+        justify-content:space-between;
+        padding-top:24px;
+        padding-bottom:24px;
+    }
+
+    .FooterBrand, .FooterLinks, .FooterSocialLinks, .FooterCopyright {
+        flex:50%;
+        margin-bottom: 0;
+    }
+
+    .FooterBrand, .FooterCopyright {
+        justify-content:flex-start;
+        height: 30px;
+        padding-left: 12px;
+    }
+
+    .FooterLinks, .FooterSocialLinks {
+        justify-content:flex-end
+    }
+
+    .FooterLinks {
+        order:1;
+        margin-bottom:0;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 481px) {
+    .Container, .ContainerSM {
+        padding-left:24px;
+        padding-right:24px
+    }
+}

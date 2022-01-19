@@ -6,13 +6,15 @@ const Button = ({
     disabled,
     onClick
 }) => {
+    const ButtonStyle = `${buttonStyles.Button} ${buttonStyles.ButtonShadow}`;
+
     return (
-        <button
-            className={(disabled) ? buttonStyles.DisabledButton : buttonStyles.Button}
+        <button 
+            className={(disabled) ? `${buttonStyles.DisabledButton} ${ButtonStyle}` : ButtonStyle} 
             disabled={disabled}
             onClick={onClick}
         >
-           {text} 
+            {text}
         </button>
     )
 };

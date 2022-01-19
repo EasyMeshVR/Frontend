@@ -20,6 +20,7 @@
 }
 
 .DropZoneText {
+    color: black;
     font-size: 1.5rem;
     width: 100%;
 }
@@ -31,8 +32,8 @@
     word-break:break-all;
 }
 
-.BoldOrangeText {
-    color: orange;
+.BoldText {
+    color: black;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -65,6 +66,7 @@
 }
 
 .ModelCodeSelectLabel {
+    color: black;
     padding-right: 1%;
     text-align: center;
 }

@@ -62,7 +62,7 @@ const Download = () => {
 
 	return (
 		<div className={downloadPageStyles.DownloadPage}>
-			<h1 className={downloadPageStyles.BoldOrangeText}>Download STL model file</h1>
+			<h1 className={downloadPageStyles.BoldText}>Download STL model file</h1>
 			<div className={downloadPageStyles.DownloadDiv}>
 				<p className={downloadPageStyles.DownloadPageText}>Enter your model code to download.</p>
 				<div className={downloadPageStyles.InputDiv}>
