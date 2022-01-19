@@ -35,7 +35,7 @@ const FeaturesSection = () => {
 									Collaborate With Others
 								</h3>
 								<p className={`${featuresSectionStyles.TextSM} ${featuresSectionStyles.mb0}`}>
-									Collaborate with others realtime within virtual reality utilizing our multiplayer servers.
+									Collaborate with others within virtual reality using our multiplayer servers.
 								</p>
 							</div>
 						</div>

@@ -1,0 +1,238 @@
+.Hero {
+    text-align:center;
+    padding-top:48px;
+    padding-bottom:24px
+}
+
+.Container {
+    max-width:1128px
+}
+
+.HeroCopy {
+    position:relative
+}
+
+.HeroParagraph {
+    margin-bottom:32px;
+	font-size: 1.25rem;
+	color: #273c5a;
+}
+
+.HeroTitle {
+	color: black;
+}
+
+.HeroApp {
+    position:relative
+}
+
+.HeroAppIllustration {
+    position:absolute;
+    top:-358px;
+    left:calc(50% - 436px);
+    pointer-events:none
+}
+
+.HeroAppDots {
+    display:none;
+    position:absolute
+}
+
+.HeroAppDots1 {
+    top:15px;
+    left:-108px
+}
+
+.HeroAppDots2 {
+    bottom:100px;
+    left:320px
+}
+
+.DeviceMockup {
+    position:relative;
+    width:350px;
+    height:auto;
+    margin:0 auto;
+}
+
+.HeroCta {
+    max-width:400px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:40px
+}
+
+.mt0 {
+	margin-top: 0;
+}
+
+.Button{
+    display:inline-flex;
+    font-size:14px;
+    letter-spacing:0px;
+    font-weight:700;
+    line-height:16px;
+    text-decoration:none !important;
+    text-transform:uppercase;
+    background-color:#273C5A;
+    color:#fff !important;
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+    justify-content:center;
+    padding:16px 32px;
+    height:48px;
+    text-align:center;
+    white-space:nowrap
+}
+
+.Button:hover {
+    background:#293e5e
+}
+
+.Button:active {
+    outline:0
+}
+
+.Button::before {
+    border-radius:2px
+}
+
+.ButtonShadow {
+    position:relative
+}
+
+.ButtonShadow::before {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    box-shadow:0 8px 24px rgba(6,16,31,0.25);
+    mix-blend-mode:multiply;
+    transition:box-shadow .15s ease
+}
+
+.ButtonShadow:hover::before {
+    box-shadow:0 8px 24px rgba(6,16,31,0.35)
+}
+
+.ButtonSM {
+    padding:8px 24px;
+    height:32px
+}
+
+.ButtonSM.ButtonShadow::before {
+    box-shadow:0 4px 16px rgba(6,16,31,0.25)
+}
+
+.ButtonSM.ButtonShadow:hover::before {
+    box-shadow:0 4px 16px rgba(6,16,31,0.35)
+}
+
+.ButtonPrimary {
+    background-color:#F9425F
+}
+
+.ButtonPrimary:hover {
+    background:#f94763
+}
+
+.ButtonPrimary.ButtonShadow::before {
+    box-shadow:0 8px 16px rgba(249,66,95,0.25);
+    mix-blend-mode:normal
+}
+
+.ButtonPrimary.ButtonShadow:hover::before {
+    box-shadow:0 8px 16px rgba(249,66,95,0.35)
+}
+
+.ButtonPrimary .ButtonSM.ButtonShadow::before {
+    box-shadow:0 4px 16px rgba(249,66,95,0.25)
+}
+
+.ButtonPrimary .ButtonSM.ButtonShadow:hover::before {
+    box-shadow:0 4px 16px rgba(249,66,95,0.35)
+}
+
+.ButtonBlock {
+    display:flex
+}
+
+@media (max-width: 639px) {
+    .HeroCta .Button {
+        display:flex
+    }
+
+    .HeroCta .Button+.Button {
+        margin-top:16px
+    }
+
+    .HeroShapeTop {
+        display:none
+    }
+}
+
+@media (min-width: 641px) {
+    .Hero {
+        position:relative;
+        text-align:left;
+        padding-top:56px;
+        padding-bottom:12px
+    }
+
+    .Hero::before {
+        content:'';
+        position:absolute;
+        left:0;
+        bottom:20px;
+        width:415px;
+        height:461px;
+    }
+
+    .HeroInner {
+        display:flex;
+        justify-content:space-between
+    }
+
+    .HeroCopy {
+        padding-top:88px;
+        padding-right:48px;
+        min-width:448px;
+        max-width:588px
+    }
+
+    .HeroTitle {
+        margin-bottom:24px;
+		font-size: 48px;
+		line-height: 62px;
+		letter-spacing: 0px;
+    }
+
+    .HeroParagraph {
+        margin-bottom:40px
+    }
+
+    .HeroAppIllustration {
+        left:-257px
+    }
+
+    .HeroAppDots {
+        display:block
+    }
+
+    .DeviceMockup {
+        max-width:none
+    }
+
+    .HeroCta {
+        margin:0
+    }
+    .HeroCta .Button {
+        min-width:170px
+    }
+    .HeroCta .Button:first-child {
+        margin-right:16px
+    }
+}

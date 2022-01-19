@@ -27,7 +27,8 @@
 }
 
 .Features .SectionTitle {
-    margin-bottom:48px
+    margin-bottom:48px;
+    color: black;
 }
 
 .FeaturesWrap {
@@ -70,6 +71,7 @@
 
 .FeatureTitle {
     font-weight: bold;
+    color: #273c5a;
 }
 
 @media (min-width: 641px) {
