@@ -1,22 +1,60 @@
-.Button {
-   background-color: white; 
-   border-radius: 3px;
-   border: none;
-   width: 200px;
-   height: 45px;
-   text-align: center;
-}
-
-.DisabledButton {
-   background-color: lightgray; 
-   border-radius: 3px;
-   border: none;
-   width: 200px;
-   height: 45px;
-   text-align: center;   
+.Button{
+    display:inline-flex;
+    font-size:14px;
+    letter-spacing:0px;
+    font-weight:700;
+    line-height:16px;
+    text-decoration:none !important;
+    text-transform:uppercase;
+    background-color:#273C5A;
+    color:#fff !important;
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+    justify-content:center;
+    padding:16px 32px;
+    height:48px;
+    text-align:center;
+    white-space:nowrap
 }
 
 .Button:hover {
-    cursor: pointer;
-    background-color: orange;
+    background:#293e5e
+}
+
+.Button:active {
+    outline:0
+}
+
+.Button::before {
+    border-radius:2px
+}
+
+.ButtonShadow {
+    position:relative
+}
+
+.ButtonShadow::before {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    box-shadow:0 8px 24px rgba(6,16,31,0.25);
+    mix-blend-mode:multiply;
+    transition:box-shadow .15s ease
+}
+
+.ButtonShadow:hover::before {
+    box-shadow:0 8px 24px rgba(6,16,31,0.35)
+}
+
+.DisabledButton {
+   background-color: gray; 
+}
+
+.DisabledButton:hover {
+   cursor: default;
+   background: gray;
 }

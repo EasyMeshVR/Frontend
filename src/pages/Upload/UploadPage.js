@@ -81,7 +81,7 @@ const UploadPage = () => {
 			onDragLeave={overrideEventDefaults}
 			onDragOver={overrideEventDefaults}
 		>
-			<h1 className={uploadPageStyles.BoldOrangeText}>Upload STL model file</h1>
+			<h1 className={uploadPageStyles.BoldText}>Upload STL model file</h1>
 			<div 
 				className={uploadPageStyles.UploadDropZone}
 				onDrop={handleFileDrop} 
@@ -141,7 +141,7 @@ const UploadPage = () => {
 						<p className={uploadPageStyles.DropZoneText}>
 							Finished uploading {file.name}, your model code is:
 						</p>
-						<p className={`${uploadPageStyles.DropZoneText} ${uploadPageStyles.BoldOrangeText}`}>
+						<p className={`${uploadPageStyles.DropZoneText} ${uploadPageStyles.BoldText}`}>
 							{modelCode}
 						</p>
 					</div> : <></>
