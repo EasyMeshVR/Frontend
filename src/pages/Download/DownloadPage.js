@@ -36,6 +36,7 @@ const Download = () => {
 					case 400:
 						setErrorMessage("The model code is either a 6-digit or a three-word code separated by hyphens.");
 						break;
+					case 403:
 					case 404:
 						setErrorMessage("File not found.")
 						break;
