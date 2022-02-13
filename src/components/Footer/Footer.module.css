@@ -1,20 +1,8 @@
 .SiteFooter {
-    position:relative;
-    font-size:14px;
-    line-height:20px;
+    font-size:16px;
+    line-height:25px;
     letter-spacing:0px;
-    color:#556B8B;
-	background-color: #273c5a;
-}
-
-.SiteFooter::before {
-    content:'';
-    position:absolute;
-    bottom:0;
-    left:calc(50% - 180px);
-    width:297px;
-    height:175px;
-    background-repeat:no-repeat;
+	background-color: #556B8B;
 }
 
 .SiteFooter a {
@@ -27,11 +15,8 @@
 }
 
 .SiteFooterInner {
-    position:relative;
     display:flex;
     flex-wrap:wrap;
-    padding-top:28px;
-    padding-bottom:28px;
 }
 
 .FooterBrand, .FooterLinks, .FooterSocialLinks, .FooterCopyright {
@@ -81,22 +66,6 @@
     padding-right:0
 }
 
-.HasTopDivider {
-    position:relative
-}
-
-.HasTopDivider::before {
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    display:block;
-    height:1px;
-    background:#273C5A;
-    background:linear-gradient(to right, rgba(39,60,90,0.1) 0, rgba(39,60,90,0.6) 50%, rgba(39,60,90,0.1) 100%)
-}
-
 .ListReset {
     list-style:none;
     padding:0;
@@ -110,10 +79,6 @@
 }
 
 @media (min-width: 641px) {
-    .SiteFooter {
-        margin-top:20px
-    }
-
     .SiteFooterInner {
         justify-content:space-between;
         padding-top:24px;

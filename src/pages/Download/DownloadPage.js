@@ -103,6 +103,8 @@ const Download = () => {
 					: <></>
 				}
 			</div>
+				<h1 className={downloadPageStyles.BoldText}>Need Help?</h1>
+				<p className={downloadPageStyles.DownloadPageText}>In VR you can upload a model through the game menu to recieve a 6-digit code.<br></br>Use that code here to automatically download the STL file to your device.</p>
 		</div>
 	)
 };
