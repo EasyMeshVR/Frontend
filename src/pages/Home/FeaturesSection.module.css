@@ -1,4 +1,4 @@
-.Container, .ContainerSM {
+.ContainerSM {
     width:100%;
     margin:0 auto;
     padding-left:16px;
@@ -6,21 +6,13 @@
 }
 
 @media (min-width: 481px) {
-    .Container, .ContainerSM {
+    .ContainerSM {
         padding-left:24px;
         padding-right:24px
     }
 }
 
-.Container {
-    max-width:1128px
-}
-
 .ContainerSM {
-    max-width:848px
-}
-
-.Container .ContainerSM {
     max-width:800px;
     padding-left:0;
     padding-right:0

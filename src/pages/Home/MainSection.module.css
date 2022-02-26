@@ -4,10 +4,6 @@
     padding-bottom:24px
 }
 
-.Container {
-    max-width:1128px
-}
-
 .HeroCopy {
     position:relative
 }
@@ -50,7 +46,7 @@
 
 .DeviceMockup {
     position:relative;
-    width:350px;
+    width:560px;
     height:auto;
     margin:0 auto;
 }
@@ -172,7 +168,13 @@
     .HeroShapeTop {
         display:none
     }
+
+    .DeviceMockup {
+        width: 90%;
+        height: 400px;
+    }
 }
+
 
 @media (min-width: 641px) {
     .Hero {
@@ -193,7 +195,7 @@
 
     .HeroInner {
         display:flex;
-        justify-content:space-between
+        justify-content:space-between;
     }
 
     .HeroCopy {
@@ -223,7 +225,7 @@
     }
 
     .DeviceMockup {
-        max-width:none
+        max-width:none;
     }
 
     .HeroCta {
@@ -234,5 +236,27 @@
     }
     .HeroCta .Button:first-child {
         margin-right:16px
+    }
+}
+
+@media (max-width: 1150px) {
+    .HeroInner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .DeviceMockup {
+        justify-content: center;
+        padding-top: 50px;
+        height: 500px;
+    }
+
+    .HeroCopy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
     }
 }
