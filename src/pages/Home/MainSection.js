@@ -33,7 +33,7 @@ const MainSection = () => {
 					className={mainSectionStyles.DeviceMockup}
 					width="560" 
 					height="315" 
-					src="https://www.youtube.com/embed/i0Ctz1MZ3yk" 
+					src="https://www.youtube.com/embed/rxz-Bef2slM" 
 					title="YouTube video player" 
 					frameborder="0" 
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
