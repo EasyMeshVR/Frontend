@@ -12,7 +12,7 @@ const UploadPage = () => {
 	const [modelCode, setModelCode] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 	const [isUploading, setIsUploading] = useState(false);
-	const [codeType, setCodeType] = useState("digit");
+	const codeType = "digit";
 
 	const overrideEventDefaults = (event) => {
 		event.preventDefault();
@@ -52,11 +52,6 @@ const UploadPage = () => {
 		if (!event.target || !event.target.files) return;
 
 		handleFiles(event.target.files);
-	};
-
-	const onChangeCodeType = (event) => {
-		if (!event.target || !event.target.value) return;
-		setCodeType(event.target.value);
 	};
 
 	const uploadFile = async (event) => {
