@@ -29,11 +29,6 @@ const Footer = () => {
                                 Download Model
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/about">
-                                About Us
-                            </Link>
-                        </li>
                     </ul>
                 </div>
             </div>

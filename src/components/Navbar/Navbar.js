@@ -9,8 +9,7 @@ const Navbar = () => {
 	const renderNavLinks = () => (
 		<>
 			<NavLink to="/download" classes="NavLinkRegular" text="Download" />
-		    <NavLink to="/upload" classes="NavLinkRegular" text="Upload" />
-		    <NavLink to="/about" classes="NavLinkRegular" text="About" />
+		  <NavLink to="/upload" classes="NavLinkRegular" text="Upload" />
 		</>
 	);
 
