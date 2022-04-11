@@ -23,7 +23,7 @@ const MainSection = () => {
 						</a> */}
 						<a 
 							className={`${mainSectionStyles.Button} ${mainSectionStyles.ButtonPrimary} ${mainSectionStyles.ButtonShadow}`} 
-							href="/"
+							href="https://github.com/EasyMeshVR/EasyMeshVR-Prototype/releases/tag/v1.0.0"
 						>
 							Download App
 						</a>
