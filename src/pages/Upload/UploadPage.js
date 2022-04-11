@@ -12,7 +12,7 @@ const UploadPage = () => {
 	const [modelCode, setModelCode] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 	const [isUploading, setIsUploading] = useState(false);
-	const [codeType, setCodeType] = useState("word");
+	const codeType = "digit";
 
 	const overrideEventDefaults = (event) => {
 		event.preventDefault();
@@ -52,11 +52,6 @@ const UploadPage = () => {
 		if (!event.target || !event.target.files) return;
 
 		handleFiles(event.target.files);
-	};
-
-	const onChangeCodeType = (event) => {
-		if (!event.target || !event.target.value) return;
-		setCodeType(event.target.value);
 	};
 
 	const uploadFile = async (event) => {
@@ -106,15 +101,6 @@ const UploadPage = () => {
 						onClick={uploadFile}
 						text="Upload"
 					/>
-				</div>
-				<div className={uploadPageStyles.ModelCodeSelectDiv}>
-					<label for="codeType" className={uploadPageStyles.ModelCodeSelectLabel}>
-						Choose a model code type to generate:
-					</label>
-					<select disabled={isUploading} name="codeType" id="codeType" onChange={onChangeCodeType}>
-						<option value="word">Word Code</option>
-						<option value="digit">Digit Code</option>
-					</select>
 				</div>
 				<input 
 					className={`${uploadPageStyles.DropZoneText} ${uploadPageStyles.ChooseFileInput}`} 

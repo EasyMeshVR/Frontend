@@ -15,15 +15,15 @@ const MainSection = () => {
 						website or within our VR application.
 					</p>
 					<div className={mainSectionStyles.HeroCta}>
-						<a 
+						{/* <a 
 							className={`${mainSectionStyles.Button} ${mainSectionStyles.ButtonShadow}`} 
 							href="/"
 						>
 							Learn more
-						</a>
+						</a> */}
 						<a 
 							className={`${mainSectionStyles.Button} ${mainSectionStyles.ButtonPrimary} ${mainSectionStyles.ButtonShadow}`} 
-							href="/"
+							href="https://github.com/EasyMeshVR/EasyMeshVR-Prototype/releases"
 						>
 							Download App
 						</a>
